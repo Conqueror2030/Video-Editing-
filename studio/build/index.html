@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Template</title>
+    <script src="../../node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="../../node_modules/@antv/g2/dist/g2.min.js"></script>
+    <style>
+        body, #stage {
+            background: transparent !important;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 1080px;
+            height: 1920px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #stage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .spoken-text {
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            max-width: 80%;
+            line-height: 1.2;
+            opacity: 0; /* GSAP will handle */
+        }
+
+        .metric-container {
+            width: 800px;
+            height: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.5); /* Slight contrast against transparent bg */
+            opacity: 0; /* GSAP will handle */
+            display: none; /* Only show when needed */
+        }
+
+        /* Clean minimal tech product announcements styling */
+        .layout-minimal .spoken-text {
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .layout-bold .spoken-text {
+            font-weight: 900;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+<body data-width="1080" data-height="1920">
+    <div id="stage">
+        <div id="chunk-0" class="chunk-container layout-minimal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0;">
+  <div class="spoken-text">Introducing the Next Generation</div>
+</div>
+<div id="chunk-1" class="chunk-container layout-bold" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0;">
+  <div class="spoken-text">Unprecedented Growth</div>
+  <div id="chart-1" class="metric-container" style="display: block;"></div>
+</div>
+<div id="chunk-2" class="chunk-container layout-minimal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0;">
+  <div class="spoken-text">The Future is Here</div>
+</div>
+
+    </div>
+    <script src="./motion.js"></script>
+
+<script>
+
+// Chart for chunk 1
+(function() {
+    const chart = new G2.Chart({
+        container: 'chart-1',
+        autoFit: true,
+        theme: 'classicDark' // Using dark theme for transparency base
+    });
+
+    chart.data([{"year":"2021","sales":38},{"year":"2022","sales":52},{"year":"2023","sales":61},{"year":"2024","sales":145},{"year":"2025","sales":480}]);
+
+    chart.interval()
+        .encode('x', 'year')
+        .encode('y', 'sales')
+        .style('fill', '#ffffff')
+        .style('fillOpacity', 0.8)
+        .style('radiusTopLeft', 8)
+        .style('radiusTopRight', 8);
+
+    chart.axis('x', {
+        labelFill: '#ffffff',
+        titleFill: '#ffffff',
+        gridStroke: 'rgba(255, 255, 255, 0.1)'
+    });
+
+    chart.axis('y', {
+        labelFill: '#ffffff',
+        titleFill: '#ffffff',
+        gridStroke: 'rgba(255, 255, 255, 0.1)'
+    });
+
+    chart.render();
+})();
+
+</script>
+</body>
+</html>

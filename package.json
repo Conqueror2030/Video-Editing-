@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "render:clear": "hyperframes render --output ./output/clear_text_layer.mp4 --fps 30 --max-workers 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Conqueror2030/Video-Editing-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Conqueror2030/Video-Editing-/issues"
+  },
+  "homepage": "https://github.com/Conqueror2030/Video-Editing-#readme",
+  "dependencies": {
+    "@antv/g2": "^5.4.8",
+    "gsap": "^3.15.0",
+    "hyperframes": "^0.6.88"
+  }
+}
