@@ -1,0 +1,27 @@
+[
+  {
+    "start_time": 0,
+    "end_time": 3,
+    "spoken_text": "Introducing the Next Generation",
+    "layout_style": "minimal"
+  },
+  {
+    "start_time": 3,
+    "end_time": 8,
+    "spoken_text": "Unprecedented Growth",
+    "layout_style": "bold",
+    "metric_data": [
+      { "year": "2021", "sales": 38 },
+      { "year": "2022", "sales": 52 },
+      { "year": "2023", "sales": 61 },
+      { "year": "2024", "sales": 145 },
+      { "year": "2025", "sales": 480 }
+    ]
+  },
+  {
+    "start_time": 8,
+    "end_time": 10,
+    "spoken_text": "The Future is Here",
+    "layout_style": "minimal"
+  }
+]
