@@ -8,7 +8,9 @@
     "render:clear": "hyperframes render --output ./output/clear_text_layer.mp4 --fps 30 --max-workers 1",
     "video-use:install": "pip install requests librosa matplotlib pillow numpy openai-whisper ffmpeg-python",
     "video-use:transcribe": "python ./video-use/helpers/transcribe.py",
-    "video-use:render": "python ./video-use/helpers/render.py"
+    "lead:fetch": "node ./studio/fetch-leads.js",
+    "video:design": "op render ./studio/canvas.json --format html",
+    "video:render": "python ./video-use/helpers/render.py"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/Conqueror2030/Video-Editing-#readme",
   "dependencies": {
     "@antv/g2": "^5.4.8",
+    "@zseven-w/openpencil": "^0.7.6",
     "gsap": "^3.15.0",
     "hyperframes": "^0.6.88"
   }
